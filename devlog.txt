@@ -18,4 +18,8 @@ carolP -- 2017-10-22 15:44
 created devlog
 creating pdf
 linking submodule
+
+ireneL -- 2017-10-22 20:42
+--------------------------
+- Created site map (showing linkage of user pathways and page visions for every prospective page)
 ============================================================
