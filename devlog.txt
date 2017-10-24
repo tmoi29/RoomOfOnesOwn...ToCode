@@ -31,6 +31,6 @@ ireneL -- 2017-10-22 20:42
 
 Plan:
 
-Thursday - database population code, create account, display 1 blog post, template
-Friday -
+Thursday - database population code (tmoi), create account (cpan), display 1 blog post template/ templates w/ imheritance (ilam)
+Friday - edit own blog, access other user's blog
 Weekend - feed stuff
