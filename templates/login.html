@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+  </head>
+  <body>
+    <form action="/loggedin">
+      <h3>What is your name?</h3>
+        <!-- Message only shows in the case of an error, e.g. username is incorrect, password is incorrect -->
+      {{message}}
+        <br>
+      Username: <input type = 'text' name="username"> <br>
+      Password: <input type = 'password' name="password">
+      <br><br>
+      <input type = 'submit'>
+    </form>
+  </body>
+</html>
