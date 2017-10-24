@@ -13,13 +13,18 @@ Irene Lam, Tiffany Moi, Carol Pan
 Format (to be appended to end)
 firstL -- TIMESTAMP
 ============================================================
+tiffanyM -- 2017-10-22 12:50
+--------------------------
+created the database schema
+
 carolP -- 2017-10-22 15:44
 --------------------------
-created devlog
-creating pdf
-linking submodule
+created component map
+populated root repository
+linked submodule
 
 ireneL -- 2017-10-22 20:42
 --------------------------
 - Created site map (showing linkage of user pathways and page visions for every prospective page)
+
 ============================================================
