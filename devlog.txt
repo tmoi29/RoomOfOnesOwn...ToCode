@@ -28,3 +28,9 @@ ireneL -- 2017-10-22 20:42
 - Created site map (showing linkage of user pathways and page visions for every prospective page)
 
 ============================================================
+
+Plan:
+
+Thursday - database population code, create account, display 1 blog post, template
+Friday -
+Weekend - feed stuff
