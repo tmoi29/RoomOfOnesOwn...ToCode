@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ message }} Profile</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}
+    Profile
+{% endblock %}
+{% block content %}
+    <h2>Welcome {{ name }}</h2>
+    <p>Welcome!</p>
+{% endblock %}

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, redirect
+from flask import Flask, render_template, request, session, redirect, flash, url_for
 import os
 
 app = Flask (__name__)
@@ -16,6 +16,22 @@ def hello_world():
     if "username" in session.keys():
        return render_template("welcome.html", name = session["username"])
     return render_template("login.html", message = "")
+
+@app.route("/createaccount")
+def create_account():
+    return render_template("createaccount.html")
+
+@app.route("/auth")
+def check_creation():
+    #if request.args["username"] is unique will do later
+    if request.args["password1"] == request.args["password2"]:
+        #add in stuff
+        flash("Success!")
+        return redirect(url_for("hello_world"))
+    else:
+        flash("Passwords do not match :(")
+        return redirect(url_for("create_account"))
+
 
 @app.route("/welcome")
 def logged_in():
@@ -35,7 +51,9 @@ def logged_in():
 @app.route("/profile")
 def profile():
     #To be updated
-    return render_template("profile.html")
+    if "username" in session.keys():
+        return render_template("profile.html", name = session["username"])
+    return redirect("/")
 
 @app.route("/about")
 def about():
