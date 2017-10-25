@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %} {% endblock}</title>
+</head>
+
+<body>
+  {% block taskbar %}
+  
+  {% endblock %}
+
+  {% set msgs = get_flashed_messages() %}
+  {% for message in msgs %}
+  {{message}}
+  {% endfor %}
+
+  {% block content %}
+
+  {% endblock %}
+
+</body>
+</html>
+
+  
