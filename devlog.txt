@@ -27,11 +27,15 @@ ireneL -- 2017-10-22 20:42
 --------------------------
 - Created site map (showing linkage of user pathways and page visions for every prospective page)
 
-============================================================
 ireneL -- 2017-10-23 11:58
 --------------------------
 - Modified site map to correspond with updates (e.g. welcome, log out)
-============================================================
+
+tiffanyM -- 2017-10-24 12:32
+--------------------------
+wrote code to make tables
+changed the database schema to reflect new design updates
+
 ireneL -- 2017-10-25 00:23
 --------------------------
 - Added templates
@@ -43,6 +47,10 @@ ireneL -- 2017-10-25 00:23
     - Links to the user profile page and about page, and log out button
     - Search functionality (e.g. searching for a specific blog)
     - Styled based on a Halloween theme, and includes other stylistic elements (e.g. positioning, size, font, margin, padding, width, text alignment)
+
+tiffanyM -- 2017-10-25 01:03
+--------------------------
+began writing code for updating and adding to the tables
 ============================================================
 
 Plan:
