@@ -28,6 +28,22 @@ ireneL -- 2017-10-22 20:42
 - Created site map (showing linkage of user pathways and page visions for every prospective page)
 
 ============================================================
+ireneL -- 2017-10-23 11:58
+--------------------------
+- Modified site map to correspond with updates (e.g. welcome, log out)
+============================================================
+ireneL -- 2017-10-25 00:23
+--------------------------
+- Added templates
+    - ABOUT: (to be updated) for basic information on how users should navigate the site
+    - LOGIN: contains information relating to login (i.e. username, password, relevant error message)
+    - PROFILE: (to be updated) for specific information regarding the user (e.g. blogs contributed to, blogs created, relevant time stamps)
+    - WELCOME: redirects to login if the user is not logged in, otherwise displays the feed (to be updated)
+- Welcome page contains a navigation bar
+    - Links to the user profile page and about page, and log out button
+    - Search functionality (e.g. searching for a specific blog)
+    - Styled based on a Halloween theme, and includes other stylistic elements (e.g. positioning, size, font, margin, padding, width, text alignment)
+============================================================
 
 Plan:
 
