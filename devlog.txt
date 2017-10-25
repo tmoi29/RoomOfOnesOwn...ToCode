@@ -1,5 +1,7 @@
-TEAM: A ROOM OF ONE'S OWN...TO CODE
+A ROOM OF ONE'S OWN...TO CODE
 Irene Lam, Tiffany Moi, Carol Pan
+SoftDev pd7
+P00 - Da Art of Storytellin'
  _______   ________  __     __  __        ______    ______  
 |       \ |        \|  \   |  \|  \      /      \  /      \ 
 | $$$$$$$\| $$$$$$$$| $$   | $$| $$     |  $$$$$$\|  $$$$$$\
@@ -10,8 +12,10 @@ Irene Lam, Tiffany Moi, Carol Pan
 | $$    $$| $$     \    \$$$   | $$     \\$$    $$ \$$    $$
  \$$$$$$$  \$$$$$$$$     \$     \$$$$$$$$ \$$$$$$   \$$$$$$ 
 
-Format (to be appended to end)
+**********<>***********
+Format (APPEND TO END)
 firstL -- TIMESTAMP
+**********<>***********
 ============================================================
 tiffanyM -- 2017-10-22 12:50
 --------------------------
@@ -26,16 +30,21 @@ linked submodule
 ireneL -- 2017-10-22 20:42
 --------------------------
 - Created site map (showing linkage of user pathways and page visions for every prospective page)
-
+============================================================
 ireneL -- 2017-10-23 11:58
 --------------------------
 - Modified site map to correspond with updates (e.g. welcome, log out)
-
+============================================================
 tiffanyM -- 2017-10-24 12:32
 --------------------------
 wrote code to make tables
 changed the database schema to reflect new design updates
 
+carolP -- 2017-10-24 18:23
+--------------------------
+created a base html to be the basis of inheritance and included some format
+created a create account html
+============================================================
 ireneL -- 2017-10-25 00:23
 --------------------------
 - Added templates
@@ -56,6 +65,11 @@ tiffanyM -- 2017-10-25 13:20
 --------------------------
 tested makeTable functions for createAcc and createBlog
 started on
+
+carolP -- 2017-10-24 13:23
+--------------------------
+created path for create account
+created auth path to make sure credentials are applicable
 ============================================================
 
 Plan:
