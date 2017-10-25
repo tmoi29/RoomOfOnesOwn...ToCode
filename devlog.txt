@@ -51,6 +51,11 @@ ireneL -- 2017-10-25 00:23
 tiffanyM -- 2017-10-25 01:03
 --------------------------
 began writing code for updating and adding to the tables
+
+tiffanyM -- 2017-10-25 13:20
+--------------------------
+tested makeTable functions for createAcc and createBlog
+started on
 ============================================================
 
 Plan:
