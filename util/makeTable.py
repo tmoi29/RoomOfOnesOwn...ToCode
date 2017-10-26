@@ -16,8 +16,6 @@ def db_setup():
 	c.execute("CREATE TABLE IF NOT EXISTS blogs(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, title TEXT, body TEXT, timestamp TEXT);")
 #	c.execute("SET sql_notes = 1;")
 
-#db_setup()
-
 #Accounts
 #==========================================================
 """
@@ -43,8 +41,8 @@ def createAcc(user, passw):
 
 #Create a blog
 def createBlog(user, title, body):
-                time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-		command = "INSERT INTO blogs VALUES(%s,%s,%s,%s)" %(user, title, body, time)
+                time = '"' + strftime("%Y-%m-%d %H:%M:%S") + '"'
+		command = "INSERT INTO blogs (username, title, body, timestamp) VALUES(%s,%s,%s,%s)" %(user, title, body, time)
 		print command
 		c.execute(command)
                 """
@@ -57,7 +55,7 @@ createBlog('"ajdlfkj"', '"dakfhksa"', '"hakdfjklsdjf"')
 
 def updateBlog(idnum, title, body):
 	try:
-                time = time.sfrftime("%Y-%m-%d %H:%M:%S")
+                time = '"' + time.sfrftime("%Y-%m-%d %H:%M:%S") + '"'
 		command = """UPDATE blogs 
 		SET title = %s , body = %s, time = %s 
 		WHERE id = %d""" %(title, body, time, idnum)
