@@ -1,7 +1,7 @@
 global c
 from flask import flash
 import sqlite3, random   #enable control of an sqlite database
-import time
+from time import gmtime, strftime
 
 f="info.db"
 
@@ -43,7 +43,7 @@ def createAcc(user, passw):
 
 #Create a blog
 def createBlog(user, title, body):
-                t = time.sfrftime("%Y-%m-%d %H:%M:%S")
+                time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 		command = "INSERT INTO blogs VALUES(%s,%s,%s,%s)" %(user, title, body, time)
 		print command
 		c.execute(command)
