@@ -95,9 +95,24 @@ carolP -- 2017-10-24 13:23
 created path for create account
 created auth path to make sure credentials are applicable
 ============================================================
-
+ireneL -- 2017-10-26 02:29
+--------------------------
+- Database modifications
+    - Modulized makeTable (+ initialized databases)
+    - Created form for new blog
+    - Retrieves data from form and inserts as blog into info.db
+    - Started getBlog (pulls data from info.db)
+- Template inheritance
+    - Navigation bar present in profile, welcome, and about pages
+- Createaccount and login pages are accessible via hyperlink (e.g. createaccount has link for login and vice versa)
+- Updated README with launch instructions
+============================================================
 Plan:
 
 Thursday - database population code (tmoi), create account (cpan), display 1 blog post template/ templates w/ imheritance (ilam)
 Friday - edit own blog, access other user's blog
 Weekend - feed stuff
+
+To Do:
+- Get account info from info.db as opposed to session
+- Make space for a blog post in profile template
