@@ -1,7 +1,7 @@
-
 global c
 from flask import flash
 import sqlite3, random   #enable control of an sqlite database
+import time
 
 f="info.db"
 
@@ -41,9 +41,10 @@ c.execute(command)    #run SQL statement
 """
 
 #Create a blog
-def createBlog(user, title, body, time):
+def createBlog(user, title, body):
 	idnum = random.randint(1, 1000)
 	try:
+                time = time.sfrftime("%Y-%m-%d %H:%M:%S")
 		command = "INSERT INTO blogs VALUES(%d,%s,%s,%s,%s)" %(idnum, user, title, body, time)
 		print command
 		c.execute(command)
@@ -51,8 +52,9 @@ def createBlog(user, title, body, time):
 		flash("Runtime error")
 		#createBlog(user, title, body, time)
 
-def updateBlog(idnum, title, body, time):
+def updateBlog(idnum, title, body):
 	try:
+                time = time.sfrftime("%Y-%m-%d %H:%M:%S")
 		command = """UPDATE blogs 
 		SET title = %s , body = %s, time = %s 
 		WHERE id = %d""" %(title, body, time, idnum)
