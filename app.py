@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, session, redirect, flash, url_for
-from makeTable import createBlog, db_setup, getBlog
+from util import makeTable
+
 import os, cgi
 
 app = Flask (__name__)
@@ -14,7 +15,7 @@ def hello_world():
     If session has a record of the correct username and password input, the user is logged in
     Otherwise, the login page is displayed
     '''
-    db_setup()
+    makeTable.db_setup()
     if "username" in session.keys():
        return render_template("welcome.html", name = session["username"])
     return render_template("login.html", message = "")
@@ -54,7 +55,7 @@ def logged_in():
 def profile():
     #To be updated
     if "username" in session.keys():
-        flash(getBlog(session['username']))
+        flash(makeTable.getBlog(session['username']))
         return render_template("profile.html", name = session["username"])
     return redirect("/")
 
@@ -64,8 +65,8 @@ def new_blog():
     #content = form.getvalue('content')
     #print form
     #print request.args
-    createBlog(session['username'],request.args['title'],request.args['content'], 'CURRENT_TIMESTAMP')
-    #createBlog(session['username'], form.getvalue('title'),form.getvalue('content'), 'CURRENT_TIMESTAMP')
+    makeTable.createBlog(session['username'],request.args['title'],request.args['content'])
+    #createBlog(session['username'], form.getvalue('title'),form.getvalue('content'))
     return redirect(url_for("profile"))
 
 @app.route("/about")
