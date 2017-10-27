@@ -1,5 +1,10 @@
+#A ROOM OF ONE'S OWN...TO CODE
+#Irene Lam, Tiffany Moi, Carol Pan
+#SoftDev pd7
+#P00 - Da Art of Storytellin' 
+
 from flask import Flask, render_template, request, session, redirect, flash, url_for
-from util import makeTable
+from util import make_table as make
 
 import os, cgi
 
@@ -15,7 +20,7 @@ def hello_world():
     If session has a record of the correct username and password input, the user is logged in
     Otherwise, the login page is displayed
     '''
-    makeTable.db_setup()
+    make.db_setup()
     if "username" in session.keys():
        return render_template("welcome.html", name = session["username"])
     return render_template("login.html", message = "")
@@ -26,11 +31,17 @@ def create_account():
 
 @app.route("/auth")
 def check_creation():
+    user = request.args["username"]
     #if request.args["username"] is unique will do later
     if request.args["password1"] == request.args["password2"]:
-        #add in stuff
-        flash("Success!")
-        return redirect(url_for("hello_world"))
+        pwd = request.args["password1"]
+        unique = make.createAcc(user,pwd)
+        if unique:
+            flash("Success!")
+            return redirect(url_for("hello_world"))
+        else:
+            flash ("Oops this user already exists")
+            return redirect(url_for("create_account"))
     else:
         flash("Passwords do not match :(")
         return redirect(url_for("create_account"))
@@ -55,7 +66,7 @@ def logged_in():
 def profile():
     #To be updated
     if "username" in session.keys():
-        flash(makeTable.getBlog(session['username']))
+        #flash(makeTable.getBlog(session['username']))
         return render_template("profile.html", name = session["username"])
     return redirect("/")
 
@@ -65,7 +76,7 @@ def new_blog():
     #content = form.getvalue('content')
     #print form
     #print request.args
-    makeTable.createBlog(session['username'],request.args['title'],request.args['content'])
+    make.createBlog(session['username'],request.args['title'],request.args['content'])
     #createBlog(session['username'], form.getvalue('title'),form.getvalue('content'))
     return redirect(url_for("profile"))
 
