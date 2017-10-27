@@ -1,21 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Create an Account</title>
-  </head>
-  <body>
-    <form action="/auth">
-        <h3> Create An Account </h3>
-        <br>
-        Create an Username: <input type = 'text' name="username">
-        <br>
-        Create a Password: <input type = 'password' name="password1">
-        <br>
-        Retype Password: <input type = 'password' name="password2">
-        <br><br>
-        <input type = 'submit'>
-    </form>
-    <br><br>Already have an account? Click <a href="/">here</a>!
-  </body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}
+Create An Account
+{% endblock %}
+
+{% block bg %}
+{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+<form action="/auth">
+  <h3> Create An Account </h3>
+  <br>
+  Create an Username: <input type = 'text' name="username">
+  <br>
+  Create a Password: <input type = 'password' name="password1">
+  <br>
+  Retype Password: <input type = 'password' name="password2">
+  <br><br>
+  <input type = 'submit'>
+</form>
+{% endblock %}
+
+{% block footer %}
+Already have an account? Click <a href="/">here</a>!
+{% endblock %}
