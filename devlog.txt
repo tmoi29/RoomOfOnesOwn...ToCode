@@ -107,11 +107,18 @@ ireneL -- 2017-10-26 02:29
 - Createaccount and login pages are accessible via hyperlink (e.g. createaccount has link for login and vice versa)
 - Updated README with launch instructions
 
+tiffanyM -- 2017-10-26 18:33
+--------------------------
+added autoincremented IDs to the blogs table and debugged
+added timestamps and debugged
+moved makeTable into util folder
+updated app.py to reflect the changes in makeTable and its location
+
 carolP -- 2017-10-26 23:58
 --------------------------
 rewrote makeTable into make_table, and debugged
 tested cases for each make_table fxn, all verified and working
-databases now usable in app.y
+databases now usable in app.py
 modified app.py such that new accounts can be added
 modified base.html so background and navigation bar are removable
 rewrote login.html and createaccount.html to use inheritance
