@@ -106,11 +106,20 @@ ireneL -- 2017-10-26 02:29
     - Navigation bar present in profile, welcome, and about pages
 - Createaccount and login pages are accessible via hyperlink (e.g. createaccount has link for login and vice versa)
 - Updated README with launch instructions
+
+carolP -- 2017-10-26 23:58
+--------------------------
+rewrote makeTable into make_table, and debugged
+tested cases for each make_table fxn, all verified and working
+databases now usable in app.y
+modified app.py such that new accounts can be added
+modified base.html so background and navigation bar are removable
+rewrote login.html and createaccount.html to use inheritance
 ============================================================
 Plan:
 
 Thursday - database population code (tmoi), create account (cpan), display 1 blog post template/ templates w/ imheritance (ilam)
-Friday - edit own blog, access other user's blog
+Friday - find way to make info accessible by clicking on a part of blog post, edit own blog, access other user's blog
 Weekend - feed stuff
 
 To Do:
