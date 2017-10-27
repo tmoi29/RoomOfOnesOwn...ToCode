@@ -51,6 +51,7 @@ def createAcc(user, passw):
         open_db()
 	c_dup = db.cursor()
 	command = "INSERT INTO accounts VALUES(\"%s\", \"%s\")" %(user,passw)
+        print command
 	c_dup.execute(command)
         close()
     except:
@@ -113,7 +114,8 @@ def getBlog(user):
 
 #==========================================================
 #TESTS
-createAcc("joe", "joepwd")
+#createAcc("jack", "jackpwd")
+#createAcc("lils", "lilspwd")
 #createBlog("lol", "lel", "dfjaksjd")
 #updateBlog(2, "sry fell asleep", "won't happen again")
 #print getBlog("lol")
