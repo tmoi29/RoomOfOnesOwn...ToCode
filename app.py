@@ -82,10 +82,10 @@ def new_blog():
     #createBlog(session['username'], form.getvalue('title'),form.getvalue('content'))
     return redirect(url_for("profile"))
 
-@app.route("/about")
-def about():
+@app.route("/feed")
+def feed():
     #To be updated
-    return render_template("about.html")
+    return render_template("feed.html")
 
 @app.route("/logout")
 def logged_out():
