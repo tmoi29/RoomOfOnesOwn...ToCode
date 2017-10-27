@@ -6,7 +6,7 @@
 from flask import Flask, render_template, request, session, redirect, flash, url_for
 from util import make_table as make
 
-import os, cgi
+import os, cgi, hashlib
 
 app = Flask (__name__)
 
@@ -51,10 +51,12 @@ def check_creation():
 def logged_in():
    input_name = request.args["username"]
    input_pass = request.args["password"]
-
+   hash_object = hashlib.sha224(input_pass)
+   hashed_pass = hash_object.hexdigest()
+   lookup = make.auth('"' + input_name + '"')
    #Validation process, what went wrong (if anything)?
-   if input_name == the_username:
-      if input_pass == the_password:
+   if lookup[0]:
+      if hashed_pass == lookup[1]:
          session["username"] = input_name #Creates a new session
          return render_template("welcome.html", name = input_name)
       else:

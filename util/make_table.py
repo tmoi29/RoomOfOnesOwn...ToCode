@@ -49,8 +49,8 @@ def createAcc(user, passw):
     global db
     try:
         open_db()
-	c_dup = db.cursor()
-        hash_object = hashlib.sha224(b passw)
+        c_dup = db.cursor()
+        hash_object = hashlib.sha224(passw)
         hashed_pass = hash_object.hexdigest()
 	command = "INSERT INTO accounts VALUES(\"%s\", \"%s\")" %(user,hashed_pass)
         print command
@@ -67,16 +67,22 @@ def createAcc(user, passw):
 def auth(user):
     response = []
     open_db()
+    c_dup = db.cursor()
+    command = "SELECT username FROM accounts WHERE username = %s" %(user)
     c_dup.execute(command)
-    command = "SELECT FROM accounts WHERE username = %s" %(user)
     users = c_dup.fetchall()
-    close()
     if len(users) == 0:
         response.append(False)
     else:
         response.append(True)
-        
-    
+        command = "SELECT pass FROM accounts WHERE username = %s" %(user)
+        c_dup.execute(command)
+        pwds = c_dup.fetchall()
+        for passw in pwds:
+            response.append(passw)
+            print passw
+    close()
+    return response
         
 
 #Blogs
