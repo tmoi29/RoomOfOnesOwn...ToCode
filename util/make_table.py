@@ -6,6 +6,7 @@
 global db
 #from flask import flash
 import sqlite3, random   #enable control of an sqlite database
+import hashlib
 from time import gmtime, strftime
 
 def open_db():
@@ -26,7 +27,6 @@ def db_setup():
     open_db()
     c_dup = db.cursor()
     c_dup.execute("CREATE TABLE IF NOT EXISTS accounts(username TEXT PRIMARY KEY, pass TEXT)")
-    
     c_dup.execute("CREATE TABLE IF NOT EXISTS blogs(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT, title TEXT, body TEXT, timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL)")
     
     #the breakdown:
@@ -50,7 +50,9 @@ def createAcc(user, passw):
     try:
         open_db()
 	c_dup = db.cursor()
-	command = "INSERT INTO accounts VALUES(\"%s\", \"%s\")" %(user,passw)
+        hash_object = hashlib.sha224(b passw)
+        hashed_pass = hash_object.hexdigest()
+	command = "INSERT INTO accounts VALUES(\"%s\", \"%s\")" %(user,hashed_pass)
         print command
 	c_dup.execute(command)
         close()
@@ -59,6 +61,23 @@ def createAcc(user, passw):
         return False
     return True
 #==========================================================
+
+#For authentication stuff
+#returns list of [user_exists, passw]
+def auth(user):
+    response = []
+    open_db()
+    c_dup.execute(command)
+    command = "SELECT FROM accounts WHERE username = %s" %(user)
+    users = c_dup.fetchall()
+    close()
+    if len(users) == 0:
+        response.append(False)
+    else:
+        response.append(True)
+        
+    
+        
 
 #Blogs
 #utilize SQL's ROWID functionality for identification

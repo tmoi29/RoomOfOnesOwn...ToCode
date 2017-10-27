@@ -10,8 +10,8 @@ import os, cgi
 
 app = Flask (__name__)
 
-the_username = "user" #Hardcoded username
-the_password = "pwd"  #Hardcoded password
+#the_username = "user" #Hardcoded username
+#the_password = "pwd"  #Hardcoded password
 app.secret_key = os.urandom(32)
 
 @app.route("/")
