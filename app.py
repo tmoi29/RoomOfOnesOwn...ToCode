@@ -56,7 +56,7 @@ def logged_in():
    lookup = make.auth('"' + input_name + '"')
    #Validation process, what went wrong (if anything)?
    if lookup[0]:
-      if hashed_pass == lookup[1]:
+      if hashed_pass == lookup[1][0]:
          session["username"] = input_name #Creates a new session
          return render_template("welcome.html", name = input_name)
       else:

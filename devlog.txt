@@ -123,12 +123,19 @@ databases now usable in app.py
 modified app.py such that new accounts can be added
 modified base.html so background and navigation bar are removable
 rewrote login.html and createaccount.html to use inheritance
-============================================================
+
 ireneL -- 2017-10-27 14:54
 --------------------------
 - Changed CSS styling to HTML (still with the pumpkin background)
 - Adapted the about page to the feed page
 - Adapted the initial welcome page to a page detailing the purposes of the page & instructions
+
+tiffanyM -- 2017-10-27 21:34
+--------------------------
+added code to store hashed passwords
+removed the hardcoded usernames and passwords
+linked logged_in() in app.py to the accounts table with auth() in make_table.py
+tested above modifications and debugged
 ============================================================
 Plan:
 
