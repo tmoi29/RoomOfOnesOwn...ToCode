@@ -22,22 +22,29 @@ firstL -- TIMESTAMP
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Incremented ID as opposed to random numbers
+- getting timestamps and updating timestamps to work
+- making a site look nice(-ish) withOUT css
+- authentication of user for login works
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Committing and stashing do not resolve merge conflicts (Carol & Irene)
+- ^correction : cannot exit vim editor in terminal on mac (Carol)
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+- sqlite can autoincrement and access the current time for a timestamp!
+- each new sqlite database connection call opens up a new thread!
+- when importing mods, function calls that would showup when running the module are also run in importing it!
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed ___ to ___ bc...
+- changed about page to feed page bc originally feed page is the welcome page, which is only accessed once
+- changed make_table from opening and closing dbs once overall to opening and closing in each method call bc otherwise sqlite dbs can't be accessed once connection is terminated
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-tales of wisdom gained...
+Do not trust stack overflow blindly. Though it is (mostly) right, sometimes what'd work in one context of code won't work in another
 
 ============================================================
 tiffanyM -- 2017-10-22 12:50
@@ -65,6 +72,7 @@ changed the database schema to reflect new design updates
 
 carolP -- 2017-10-24 18:23
 --------------------------
+updated design.pdf
 created a base html to be the basis of inheritance and included some format
 created a create account html
 ============================================================
