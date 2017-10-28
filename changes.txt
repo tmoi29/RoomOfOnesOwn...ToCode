@@ -1,0 +1,36 @@
+A ROOM OF ONE'S OWN...TO CODE
+Irene Lam, Tiffany Moi, Carol Pan
+SoftDev pd7
+P00 - Da Art of Storytellin'
+
+   _____ _                                 
+  / ____| |                                
+ | |    | |__   __ _ _ __   __ _  ___  ___ 
+ | |    | '_ \ / _` | '_ \ / _` |/ _ \/ __|
+ | |____| | | | (_| | | | | (_| |  __/\__ \
+  \_____|_| |_|\__,_|_| |_|\__, |\___||___/
+                            __/ |          
+                           |___/           
+          made to the initial design
+
+**********<>***********
+Format
+-----------------------
+change:
+reason(s):
+-----------------------
+**********<>***********
+
+-----------------------
+change: passwords will be hashed
+reason(s): more authentic when it comes to hosting a website and adds 
+-----------------------
+-----------------------
+change: gives id to blogs/ids for blog posts are now autoincremented
+reason(s): gives order to blog posting now that there isn't a need to continuously call random, and blogs can have same title and same user
+also provides more space for less typing (the max autoincrement value is 9223372036854775807)
+-----------------------
+-----------------------
+change: password is requested for TWICE in creating account
+reason(s): more authentic to websites with login and also removes chances of typo messing up account creation
+-----------------------
