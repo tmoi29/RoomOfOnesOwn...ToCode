@@ -132,7 +132,7 @@ modified app.py such that new accounts can be added
 modified base.html so background and navigation bar are removable
 rewrote login.html and createaccount.html to use inheritance
 
-ireneL -- 2017-10-27 14:54
+ireneL & carolP-- 2017-10-27 14:54
 --------------------------
 - Changed CSS styling to HTML (still with the pumpkin background)
 - Adapted the about page to the feed page
@@ -144,6 +144,11 @@ added code to store hashed passwords
 removed the hardcoded usernames and passwords
 linked logged_in() in app.py to the accounts table with auth() in make_table.py
 tested above modifications and debugged
+============================================================
+carolP -- 2017-10-28 16:01
+--------------------------
+updated design.pdf
+create changes.txt
 ============================================================
 Plan:
 
