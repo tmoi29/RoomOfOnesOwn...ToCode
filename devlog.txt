@@ -166,8 +166,8 @@ ireneL -- 2017-10-28 22:53
 
 carolP -- 2017-10-29 01:01
 --------------------------
-user can view just one post
-user can edit own post
+user can view just one post (includes new make_table functionality)
+user can edit own post (includes new make_table functionality, and two new paths)
 refilled out blogging.db to be more...real to life
 ============================================================
 Plan:
