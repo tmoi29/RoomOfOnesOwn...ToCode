@@ -20,7 +20,7 @@ def hello_world():
     If session has a record of the correct username and password input, the user is logged in
     Otherwise, the login page is displayed
     '''
-    make.db_setup()
+    #make.db_setup()
     if "username" in session.keys():
        return render_template("welcome.html", name = session["username"])
     return render_template("login.html", message = "")
@@ -53,7 +53,7 @@ def logged_in():
    input_pass = request.args["password"]
    hash_object = hashlib.sha224(input_pass)
    hashed_pass = hash_object.hexdigest()
-   lookup = make.auth('"' + input_name + '"')
+   lookup = make.auth(input_name)
    #Validation process, what went wrong (if anything)?
    if lookup[0]:
       if hashed_pass == lookup[1][0]:
@@ -74,26 +74,60 @@ def profile():
 
 @app.route("/newblog")
 def new_blog():
+    if not "username" in session.keys():
+        return redirect(url_for("hello_world"))
     if not make.createBlog(session['username'],request.args['title'],request.args['content']):
         flash("Please provide some content")
     return redirect(url_for("profile"))
 
 @app.route("/feed")
 def feed():
+    if not "username" in session.keys():
+        return redirect(url_for("hello_world"))
     posts = make.getBlogs()
     if posts == []:
         return render_template("feed.html", name = "No posts yet :(", post = "Post something new ~~")
-    return render_template("feed.html", name=posts)
+    return render_template("feed.html", name=posts, username=session["username"])
 
 @app.route("/userFeed")
 def userFeed():
+    if not "username" in session.keys():
+        return redirect(url_for("hello_world"))
     posts = make.getBlog(request.args["user"])
     if posts == []:
         return render_template("feed.html", name = "No posts yet :(", post = "Post something new ~~")
-    return render_template("feed.html", name=posts, user=request.args["user"])
+    return render_template("feed.html", name=posts, user=request.args["user"], username=session["username"])
+
+@app.route("/viewPost")
+def viewPost():
+    if not "username" in session.keys():
+        return redirect(url_for("hello_world"))
+    post = make.getPost(request.args["id"])
+    #print request.args["id"]
+    return render_template("feed.html", name=post, username=session["username"])
+
+@app.route("/edit")
+def editPost():
+    if not "username" in session.keys():
+        return redirect(url_for("hello_world"))
+    post = make.getPost(request.args["id"])
+    if session["username"] != post[0][1]:
+        return redirect(url_for("feed"))
+    return render_template("edit.html", name=session["username"], post=post)
+
+@app.route("/revise")
+def revise():
+    if not "username" in session.keys():
+        return redirect(url_for("hello_world"))
+    if not make.updateBlog(request.args['submit'],request.args['title'],request.args['content']):
+        flash("Try again")
+        return redirect(url_for("editPost"))
+    return redirect(url_for("feed"))
 
 @app.route("/logout")
 def logged_out():
+    if not "username" in session.keys():
+        return redirect(url_for("hello_world"))
     session.pop("username") #Ends session
     return redirect("/") #Redirecting to login
 

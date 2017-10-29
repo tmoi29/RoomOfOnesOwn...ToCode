@@ -68,14 +68,14 @@ def auth(user):
     response = []
     open_db()
     c_dup = db.cursor()
-    command = "SELECT username FROM accounts WHERE username = %s" %(user)
+    command = "SELECT username FROM accounts WHERE username = \"%s\"" %(user)
     c_dup.execute(command)
     users = c_dup.fetchall()
     if len(users) == 0:
         response.append(False)
     else:
         response.append(True)
-        command = "SELECT pass FROM accounts WHERE username = %s" %(user)
+        command = "SELECT pass FROM accounts WHERE username = \"%s\"" %(user)
         c_dup.execute(command)
         pwds = c_dup.fetchall()
         for passw in pwds:
@@ -113,7 +113,7 @@ def updateBlog(idnum, title, body):
         c_dup = db.cursor()
         timestamp = strftime("%Y-%m-%d %H:%M:%S")
         print timestamp       
-        command = "UPDATE blogs SET title = \"%s\", body = \"%s\", timestamp = \"%s\" WHERE id = %d" %(title, body, timestamp, idnum)
+        command = "UPDATE blogs SET title = \"%s\", body = \"%s\", timestamp = \"%s\" WHERE id = %s" %(title, body, timestamp, str(idnum))
         print command
         c_dup.execute(command)
         close()
@@ -122,7 +122,7 @@ def updateBlog(idnum, title, body):
         return False    
     return True
 
-#procure a blog post
+#procure blog posts
 def getBlog(user):
     global db
     open_db()
@@ -151,7 +151,23 @@ def getBlogs():
         print "Error: Something went wrong.. missing setup?"
         posts = []
     return posts
-    
+
+def getPost(blogid):
+    global db
+    open_db()
+    c_dup = db.cursor()
+    try:
+        command = "SELECT * FROM blogs WHERE id= %s" %(str(blogid))
+        print command
+        c_dup.execute(command)
+        post = c_dup.fetchall()
+        close()
+    except:
+        "Error: Something went wrong. Post does not exist"
+        post = []
+    print post
+    return post
+        
 
 #==========================================================
 #TESTS

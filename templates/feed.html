@@ -12,9 +12,14 @@
     <table border="1">
         <tr><td><a href="/userFeed?user={{message[1]}}"> {{message[1]}}</a>
             <br>
-            <b>{{message[2]}}</b></td></tr>
+            <b><a href="/viewPost?id={{message[0]}}">{{message[2]}}</b></td></tr>
         <tr><td>{{message[3]}}</td></tr>
     </table>
+   
+    {% if username and username == message[1] %}
+    <a href = "/edit?id={{message[0]}}">Edit</a>
+    {% endif %}
     <br>
+    <br><br>
     {% endfor %}
 {% endblock %}
