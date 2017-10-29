@@ -20,7 +20,7 @@ def hello_world():
     If session has a record of the correct username and password input, the user is logged in
     Otherwise, the login page is displayed
     '''
-    #make.db_setup()
+    make.db_setup()
     if "username" in session.keys():
        return render_template("welcome.html", name = session["username"])
     return render_template("login.html", message = "")
@@ -134,3 +134,12 @@ def logged_out():
 if __name__ == "__main__":
     app.debug = True
     app.run()
+
+
+    ##Active users:
+    '''
+    mod:staffbot
+    emoji:asciiart
+    user:goodpwd
+    happy:superhappy
+    '''
