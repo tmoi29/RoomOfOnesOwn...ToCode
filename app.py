@@ -74,11 +74,8 @@ def profile():
 
 @app.route("/newblog")
 def new_blog():
-    form = cgi.FieldStorage()
-    #content = form.getvalue('content')
-    #print form
-    #print request.args
-    make.createBlog(session['username'],request.args['title'],request.args['content'])
+    if not make.createBlog(session['username'],request.args['title'],request.args['content']):
+        flash("Please provide some content")
     #createBlog(session['username'], form.getvalue('title'),form.getvalue('content'))
     return redirect(url_for("profile"))
 
@@ -88,6 +85,13 @@ def feed():
     if posts == []:
         return render_template("feed.html", name = "No posts yet :(", post = "Post something new ~~")
     return render_template("feed.html", name=posts)
+
+@app.route("/userFeed")
+def userFeed():
+    posts = make.getBlog(request.args["user"])
+    if posts == []:
+        return render_template("feed.html", name = "No posts yet :(", post = "Post something new ~~")
+    return render_template("feed.html", name=posts, user=request.args["user"])
 
 @app.route("/logout")
 def logged_out():

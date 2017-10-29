@@ -3,11 +3,14 @@
     Feed
 {% endblock %}
 {% block content %}
-    <h2>Pumpkin Feed</h2>
-
+    <h2>Pumpkin Feed
+    {% if user is defined %}
+        : {{ user }}
+    {% endif %}
+    </h2>
     {% for message in name %}
     <table border="1">
-        <tr><td>{{message[1]}}
+        <tr><td><a href="/userFeed?user={{message[1]}}"> {{message[1]}}</a>
             <br>
             <b>{{message[2]}}</b></td></tr>
         <tr><td>{{message[3]}}</td></tr>

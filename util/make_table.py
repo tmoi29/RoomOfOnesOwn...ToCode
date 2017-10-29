@@ -92,6 +92,8 @@ def auth(user):
 def createBlog(user, title, body):
     global db
     try:
+        if title == "" or len(body) < 1 or body == "Enter text here...":
+            raise NameError
         open_db()
         c_dup = db.cursor()
         command = "INSERT INTO blogs(username, title, body) VALUES(\"%s\",\"%s\",\"%s\")" %(user, title, body)
@@ -123,9 +125,9 @@ def updateBlog(idnum, title, body):
 #procure a blog post
 def getBlog(user):
     global db
+    open_db()
     c_dup = db.cursor()
     try:
-        open_db()
         command = "SELECT * FROM blogs WHERE username=\"%s\"" %(user)
         #print command
         c_dup.execute(command)
@@ -133,7 +135,7 @@ def getBlog(user):
         close()
     except:
         print "Error: Called on uncallable user"
-        posts = ()
+        posts = []
     return posts
 
 def getBlogs():
@@ -141,7 +143,6 @@ def getBlogs():
     open_db()
     c_dup = db.cursor()
     try:
-        open_db()
         #print command
         c_dup.execute("SELECT * FROM blogs ORDER BY id DESC")
         posts = c_dup.fetchall()
