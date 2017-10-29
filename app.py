@@ -76,7 +76,6 @@ def profile():
 def new_blog():
     if not make.createBlog(session['username'],request.args['title'],request.args['content']):
         flash("Please provide some content")
-    #createBlog(session['username'], form.getvalue('title'),form.getvalue('content'))
     return redirect(url_for("profile"))
 
 @app.route("/feed")
