@@ -95,7 +95,7 @@ began writing code for updating and adding to the tables
 tiffanyM -- 2017-10-25 13:20
 --------------------------
 tested makeTable functions for createAcc and createBlog
-started on
+started on updateBlog
 
 carolP -- 2017-10-24 13:23
 --------------------------
