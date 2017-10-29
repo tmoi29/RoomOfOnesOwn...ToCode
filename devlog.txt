@@ -131,7 +131,7 @@ databases now usable in app.py
 modified app.py such that new accounts can be added
 modified base.html so background and navigation bar are removable
 rewrote login.html and createaccount.html to use inheritance
-
+============================================================
 ireneL & carolP-- 2017-10-27 14:54
 --------------------------
 - Changed CSS styling to HTML (still with the pumpkin background)
@@ -149,6 +149,20 @@ carolP -- 2017-10-28 16:01
 --------------------------
 updated design.pdf
 create changes.txt
+
+ireneL -- 2017-10-28 22:53
+--------------------------
+- Displays Feed
+    - Pulls data from the database and ensures that html code in the contents does not interfere with the page's operation
+    - Displays in a table, separating the name of the user, title, and content (ID and timestamp currently ignored because of questionable purpose)
+    - Blogs are listed in reverse chronological order (newest -> oldest)
+    - Individual user's feed display functionality
+        - The author in each blog are links to the user's personal feed 
+        - Personal feeds are accessible by everyone
+        - A Personal feed only contains blogs created by the user, in reverse chronological order
+        - Page customized to the specific user (i.e. name displayed in the hyperlink and in the contents of the page)
+- Fixed issues involving getting the cursor of a database before opening
+- Everything tested + Debugged
 ============================================================
 Plan:
 
