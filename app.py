@@ -84,8 +84,10 @@ def new_blog():
 
 @app.route("/feed")
 def feed():
-    #To be updated
-    return render_template("feed.html")
+    posts = make.getBlogs()
+    if posts == []:
+        return render_template("feed.html", name = "No posts yet :(", post = "Post something new ~~")
+    return render_template("feed.html", name=posts)
 
 @app.route("/logout")
 def logged_out():

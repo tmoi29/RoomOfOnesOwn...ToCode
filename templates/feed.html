@@ -4,4 +4,17 @@
 {% endblock %}
 {% block content %}
     <h2>Pumpkin Feed</h2>
+
+    {% for message in name %}
+    <table border="1">
+        <tr><td>{{message[1]}}
+            <br>
+            <b>{{message[2]}}</b></td></tr>
+        <tr><td>{{message[3]}}</td></tr>
+    </table>
+    <br>
+    {% endfor %}
+
+    <!--<h3>{{name}}</h3>-->
+    <!--<h6>{{post}}</h6>-->
 {% endblock %}

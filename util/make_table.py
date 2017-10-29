@@ -28,7 +28,7 @@ def db_setup():
     c_dup = db.cursor()
     c_dup.execute("CREATE TABLE IF NOT EXISTS accounts(username TEXT PRIMARY KEY, pass TEXT)")
     c_dup.execute("CREATE TABLE IF NOT EXISTS blogs(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT, title TEXT, body TEXT, timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL)")
-    
+
     #the breakdown:
     '''
     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
@@ -52,9 +52,9 @@ def createAcc(user, passw):
         c_dup = db.cursor()
         hash_object = hashlib.sha224(passw)
         hashed_pass = hash_object.hexdigest()
-	command = "INSERT INTO accounts VALUES(\"%s\", \"%s\")" %(user,hashed_pass)
+        command = "INSERT INTO accounts VALUES(\"%s\", \"%s\")" %(user,hashed_pass)
         print command
-	c_dup.execute(command)
+        c_dup.execute(command)
         close()
     except:
         print "Error in Account Creation: Username already taken."
@@ -111,12 +111,12 @@ def updateBlog(idnum, title, body):
         c_dup = db.cursor()
         timestamp = strftime("%Y-%m-%d %H:%M:%S")
         print timestamp       
-	command = "UPDATE blogs SET title = \"%s\", body = \"%s\", timestamp = \"%s\" WHERE id = %d" %(title, body, timestamp, idnum)
+        command = "UPDATE blogs SET title = \"%s\", body = \"%s\", timestamp = \"%s\" WHERE id = %d" %(title, body, timestamp, idnum)
         print command
-	c_dup.execute(command)
+        c_dup.execute(command)
         close()
     except:
-	print "UPDATE ERROR: NO SUCH ID"
+        print "UPDATE ERROR: NO SUCH ID"
         return False    
     return True
 
@@ -134,6 +134,21 @@ def getBlog(user):
     except:
         print "Error: Called on uncallable user"
         posts = ()
+    return posts
+
+def getBlogs():
+    global db
+    open_db()
+    c_dup = db.cursor()
+    try:
+        open_db()
+        #print command
+        c_dup.execute("SELECT * FROM blogs ORDER BY id DESC")
+        posts = c_dup.fetchall()
+        close()
+    except:
+        print "Error: Something went wrong.. missing setup?"
+        posts = []
     return posts
     
 
