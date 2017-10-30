@@ -30,7 +30,6 @@ UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Committing and stashing do not resolve merge conflicts (Carol & Irene)
 - ^correction : cannot exit vim editor in terminal on mac (Carol)
-- About page doesn't refresh on mac (Irene)
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,7 +44,8 @@ MID-DEVELOPMENT DESIGN CHANGES
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Do not trust stack overflow blindly. Though it is (mostly) right, sometimes what'd work in one context of code won't work in another
+- Do not trust stack overflow blindly. Though it is (mostly) right, sometimes what'd work in one context of code won't work in another
+- Having files of the same name in multiple directories gets...confusing
 
 ============================================================
 tiffanyM -- 2017-10-22 12:50
@@ -164,14 +164,14 @@ ireneL -- 2017-10-28 22:53
         - Page customized to the specific user (i.e. name displayed in the hyperlink and in the contents of the page)
 - Fixed issues involving getting the cursor of a database before opening
 - Everything tested + debugged
-
+============================================================
 carolP -- 2017-10-29 01:01
 --------------------------
 user can view just one post (includes new make_table functionality)
 user can edit own post (includes new make_table functionality, and two new paths)
 refilled out blogging.db to be more...real to life
 ============================================================
-ireneL -- 2017-10-30 00:35
+ireneL -- 2017-10-30 00:15
 --------------------------
 - Updated information on welcome page detailing purposes of the site and next steps
 - Adapted search bar into My Feed
@@ -179,3 +179,4 @@ ireneL -- 2017-10-30 00:35
     - Otherwise, all blogs created by the user is displayed
 - Adapted the original 'Profile' tab to a more generic 'Create a Blog' tab
 - Everything tested + debugged
+============================================================

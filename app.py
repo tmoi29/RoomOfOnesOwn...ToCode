@@ -29,7 +29,7 @@ def hello_world():
 	'''
 	make.db_setup()
 	if "username" in session.keys():
-	   return render_template("welcome.html", name = session["username"])
+		return render_template("welcome.html", name = session["username"])
 	return render_template("login.html", message = "")
 
 @app.route("/createaccount")
