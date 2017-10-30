@@ -30,6 +30,7 @@ UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Committing and stashing do not resolve merge conflicts (Carol & Irene)
 - ^correction : cannot exit vim editor in terminal on mac (Carol)
+- About page doesn't refresh on mac (Irene)
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -162,7 +163,7 @@ ireneL -- 2017-10-28 22:53
         - A Personal feed only contains blogs created by the user, in reverse chronological order
         - Page customized to the specific user (i.e. name displayed in the hyperlink and in the contents of the page)
 - Fixed issues involving getting the cursor of a database before opening
-- Everything tested + Debugged
+- Everything tested + debugged
 
 carolP -- 2017-10-29 01:01
 --------------------------
@@ -170,12 +171,11 @@ user can view just one post (includes new make_table functionality)
 user can edit own post (includes new make_table functionality, and two new paths)
 refilled out blogging.db to be more...real to life
 ============================================================
-Plan:
-
-Thursday - database population code (tmoi), create account (cpan), display 1 blog post template/ templates w/ imheritance (ilam)
-Friday - find way to make info accessible by clicking on a part of blog post, edit own blog, access other user's blog
-Weekend - feed stuff
-
-To Do:
-- Get account info from info.db as opposed to session
-- Make space for a blog post in profile template
+ireneL -- 2017-10-30 00:35
+--------------------------
+- Updated information on welcome page detailing purposes of the site and next steps
+- Adapted search bar into My Feed
+    - If the user has not created any blogs, a message from the mod appears explaining such
+    - Otherwise, all blogs created by the user is displayed
+- Adapted the original 'Profile' tab to a more generic 'Create a Blog' tab
+- Everything tested + debugged
